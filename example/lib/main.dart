@@ -33,61 +33,19 @@ class App extends StatelessWidget {
       pageIndexNotifier: pageIndexNotifier,
       length: length,
       normalBuilder: (animationController, index) => Circle(
-            size: 8.0,
-            color: Colors.black87,
-          ),
+        size: 8.0,
+        color: Colors.black87,
+      ),
       highlightedBuilder: (animationController, index) => ScaleTransition(
-            scale: CurvedAnimation(
-              parent: animationController,
-              curve: Curves.ease,
-            ),
-            child: Circle(
-              size: 12.0,
-              color: Colors.accents.elementAt((index + 3) * 3),
-            ),
-          ),
-    );
-  }
-
-  PageViewIndicator _buildExample2() {
-    return PageViewIndicator(
-      pageIndexNotifier: pageIndexNotifier,
-      length: length,
-      normalBuilder: (animationController, index) => Circle(
-            size: 8.0,
-            color: Colors.black87,
-          ),
-      highlightedBuilder: (animationController, index) => ScaleTransition(
-            scale: CurvedAnimation(
-              parent: animationController,
-              curve: Curves.ease,
-            ),
-            child: Circle(
-              size: 8.0,
-              color: Colors.white,
-            ),
-          ),
-    );
-  }
-
-  PageViewIndicator _buildExample3() {
-    return PageViewIndicator(
-      pageIndexNotifier: pageIndexNotifier,
-      length: length,
-      normalBuilder: (animationController, index) => ScaleTransition(
-            scale: CurvedAnimation(
-              parent: animationController,
-              curve: Curves.ease,
-            ),
-            child: Icon(Icons.favorite, color: Colors.black87),
-          ),
-      highlightedBuilder: (animationController, index) => ScaleTransition(
-            scale: CurvedAnimation(
-              parent: animationController,
-              curve: Curves.ease,
-            ),
-            child: Icon(Icons.star, color: Colors.white),
-          ),
+        scale: CurvedAnimation(
+          parent: animationController!,
+          curve: Curves.ease,
+        ),
+        child: Circle(
+          size: 12.0,
+          color: Colors.accents.elementAt((index! + 3) * 3),
+        ),
+      ),
     );
   }
 }
